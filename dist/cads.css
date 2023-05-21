@@ -1,0 +1,247 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(0deg, #69006d, #000);
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .wrapper {
+    padding: 0 15px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  
+  .nft-block .nft-row {
+    --auto-grid-min-size: 20rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+    grid-gap: 15px;
+  }
+  .nft-block .nft-row .nft-item {
+    border: 1px solid #000;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .nft-block .nft-row .nft-item .nft-innr {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-img {
+    height: 350px;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-img img {
+    object-fit: cover;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt {
+    position: relative;
+    padding: 30px 10px 15px;
+    z-index: 1;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt::before {
+    content: "";
+    position: absolute;
+    backdrop-filter: saturate(100%) blur(25px);
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt::after {
+    content: "";
+    position: absolute;
+    background: transparent;
+    background-image: var(--back);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    transform: rotate(180deg);
+    background-position: center center;
+    top: 0;
+    left: 0;
+    z-index: -2;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-ico-grp {
+    position: absolute;
+    top: -15px;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-ico-grp .ico {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-ico-grp .ico:first-child {
+    left: 0;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-ico-grp .ico:nth-child(2) {
+    left: 15px;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-ico-grp .ico:last-child {
+    left: 30px;
+    margin-right: 0px;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-ico-grp .ico:hover img {
+    border-color: #f3ecec;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-ico-grp .ico img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    border: 2px solid rgba(101, 101, 101, 0.5);
+    border-radius: 50%;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-mid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-mid .left {
+    display: block;
+    text-align: left;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-mid .left h4 {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 1.2;
+    color: #f3ecec;
+    margin: 0 0 5px;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-mid .left a {
+    position: relative;
+    display: inline-block;
+    color: #f3ecec;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-mid .left a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    background: #fff;
+    transtion: all 0.5s linear;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-mid .right {
+    text-align: right;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-mid .right h3 {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 1.2;
+    color: #f3ecec;
+    margin: 0 0 5px;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-mid .right p {
+    font-size: 16px;
+    color: #f3ecec;
+    margin: 0 0 5px;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-bot {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 15px 0 0;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-bot .btn {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 300;
+    color: #f3ecec;
+    padding: 5px 10px;
+    background: rgba(176, 0, 199, 0.3);
+    border: 1px solid #656565;
+    border-radius: 2px;
+    transition: all 0.5s ease-in-out;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-bot .btn:hover {
+    background: rgba(101, 101, 101, 0.55);
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-bot .btn.buy-btn {
+    text-align: left;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-bot .btn.viw-btn {
+    color: #999999;
+    background: rgba(18, 17, 23, 0.3);
+    text-align: right;
+  }
+  .nft-block .nft-row .nft-item .nft-innr .nft-cnt .nft-bot .btn.viw-btn:hover {
+    background: rgba(18, 17, 23, 0.8);
+  }
+
+  body {
+    background-color: #1c1f2b;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+  }
+
+  th, td {
+    border: 1px solid #4d4d4d;
+    padding: 10px;
+  }
+
+  th {
+    background-color: #f0ad4e;
+    color: #1c1f2b;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  tr:nth-child(even) {
+    background-color: #292b38;
+  }
+
+  tr:hover {
+    background-color: #383a4f;
+    color: #f0ad4e;
+  }
+
+  th:first-child,
+  td:first-child {
+    background-color: #292b38;
+    color: #f0ad4e;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 20%;
+  }
+
+  th:last-child,
+  td:last-child {
+    background-color: #292b38;
+    color: #f0ad4e;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 30%;
+  }
+
+  .linea {
+    background: linear-gradient(to right, #f0ad4e, #4d4d4d); 
+    height: 2px;
+  }
